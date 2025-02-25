@@ -1,0 +1,111 @@
+.users-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #1c1e26;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .add-user-form {
+      background: #252730;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #e1e1e1;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input, select {
+          padding: 10px;
+          border: 1px solid #444;
+          border-radius: 5px;
+          background: #2e3039;
+          color: #ffffff;
+          outline: none;
+          transition: 0.3s;
+
+          &:focus {
+            border-color: #ff4081;
+            box-shadow: 0px 0px 5px #ff4081;
+          }
+        }
+
+        button {
+          background: #ff4081;
+          color: #ffffff;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: 0.3s;
+
+          &:hover {
+            background: #e03570;
+          }
+        }
+      }
+    }
+
+    .users-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #444;
+      }
+
+      th {
+        background: #292b36;
+        color: #ffffff;
+      }
+
+      td {
+        background: #252730;
+      }
+
+      .delete-btn {
+        background: #e74c3c;
+        color: #ffffff;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: #c0392b;
+        }
+      }
+    }
+
+    .success {
+      color: #2ecc71;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .error {
+      color: #e74c3c;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }

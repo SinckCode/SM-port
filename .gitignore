@@ -1,0 +1,58 @@
+# Ignorar la carpeta del backend
+backend/
+
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+
+# Archivos de compilación
+dist/
+build/
+
+# Archivos de configuración de ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Caché de Vite y otros archivos de compilación
+.vite
+.cache
+output.log
+
+# Archivos del editor y sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

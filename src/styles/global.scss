@@ -1,0 +1,29 @@
+@use "components/navbar";
+@use "components/hero";
+@use "components/projects";
+@use "components/about";
+@use "components/contact";
+
+// 🎨 Estilos generales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
