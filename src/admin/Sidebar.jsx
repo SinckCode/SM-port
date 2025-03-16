@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaTachometerAlt, FaUsers, FaEnvelope, FaCog, FaSignOutAlt } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
+import { FaImages } from "react-icons/fa6";
+
 import "../styles/admin/sidebar.scss";
 
 const Sidebar = () => {
@@ -19,9 +22,9 @@ const Sidebar = () => {
           <li><Link to="/admin"><FaTachometerAlt /> Dashboard</Link></li>
           <li><Link to="/admin/users"><FaUsers /> Usuarios</Link></li>
           <li><Link to="/admin/messages"><FaEnvelope /> Mensajes</Link></li>
+          <li><Link to="/admin/proyects"><GrProjects /> Proyectos</Link></li>
+          <li><Link to="/admin/carousel"><FaImages /> Carousel</Link></li>
           <li><Link to="/admin/settings"><FaCog /> Configuración</Link></li>
-          <li><Link to="/admin/proyects"><FaCog /> Proyectos</Link></li>
-          <li><Link to="/admin/carousel"><FaCog /> Carousel</Link></li>
           <li><button onClick={handleLogout}><FaSignOutAlt /> Cerrar Sesión</button></li>
         </ul>
       </nav>
