@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import "../styles/components/carousel.scss";
+import "../styles/components/Carousel.scss";
 
 const Carousel = () => {
   const [images, setImages] = useState([]);
