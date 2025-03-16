@@ -39,19 +39,28 @@ const AdminProjects = () => {
   // 📌 Crear o actualizar un proyecto
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!newProject.title || !newProject.description || !newProject.link) {
       setError("Todos los campos son obligatorios.");
       return;
     }
 
     try {
+      const token = localStorage.getItem("authToken"); // 📌 Obtener el token
+      if (!token) {
+        setError("⚠️ No tienes permiso para esta acción.");
+        return;
+      }
+
+      const config = { headers: { Authorization: token } }; // 📌 Agregar token en los headers
+
       if (editingProject) {
         // 📌 Actualizar proyecto existente
-        await axios.put(`https://backend-succedingmedia01.onrender.com/projects/${editingProject._id}`, newProject);
+        await axios.put(`https://backend-succedingmedia01.onrender.com/projects/${editingProject._id}`, newProject, config);
         setSuccess("✅ Proyecto actualizado correctamente.");
       } else {
         // 📌 Crear nuevo proyecto
-        await axios.post("https://backend-succedingmedia01.onrender.com/projects", newProject);
+        await axios.post("https://backend-succedingmedia01.onrender.com/projects", newProject, config);
         setSuccess("✅ Proyecto creado correctamente.");
       }
 
@@ -69,7 +78,16 @@ const AdminProjects = () => {
     if (!window.confirm("¿Seguro que deseas eliminar este proyecto?")) return;
 
     try {
-      await axios.delete(`https://backend-succedingmedia01.onrender.com/projects/${id}`);
+      const token = localStorage.getItem("authToken"); // 📌 Obtener el token
+      if (!token) {
+        setError("⚠️ No tienes permiso para esta acción.");
+        return;
+      }
+
+      await axios.delete(`https://backend-succedingmedia01.onrender.com/projects/${id}`, {
+        headers: { Authorization: token },
+      });
+
       fetchProjects();
     } catch (err) {
       setError("Error al eliminar proyecto.");

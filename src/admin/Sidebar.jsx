@@ -21,6 +21,7 @@ const Sidebar = () => {
           <li><Link to="/admin/messages"><FaEnvelope /> Mensajes</Link></li>
           <li><Link to="/admin/settings"><FaCog /> Configuración</Link></li>
           <li><Link to="/admin/proyects"><FaCog /> Proyectos</Link></li>
+          <li><Link to="/admin/carousel"><FaCog /> Carousel</Link></li>
           <li><button onClick={handleLogout}><FaSignOutAlt /> Cerrar Sesión</button></li>
         </ul>
       </nav>

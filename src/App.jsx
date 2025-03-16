@@ -7,13 +7,14 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./admin/Login";
 import AdminPanel from "./admin/AdminPanel";
+import Carousel from "./components/Carousel";
 import "./styles/global.scss";
 
 function App() {
   return (
     <Routes>
       {/* Rutas del frontend */}
-      <Route path="/" element={<><Navbar /><Hero /><Projects /><About /><Contact /></>} />
+      <Route path="/" element={<><Navbar /><Hero /><Projects /><About /><Carousel/><Contact /></>} />
 
       {/* Ruta de Login */}
       <Route path="/login" element={<Login />} />

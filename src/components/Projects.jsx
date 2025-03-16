@@ -41,24 +41,25 @@ const Projects = () => {
 
         {/* Modal de Proyecto */}
         {selectedProject && (
-          <div className="modal open">
-            <div className="modal-content">
-              <button className="close-btn" onClick={() => setSelectedProject(null)}>✖</button>
-              <img src={selectedProject.image} alt={selectedProject.title} />
-              <h3>{selectedProject.title}</h3>
-              <p>{selectedProject.details}</p>
-              <div className="technologies">
-                {selectedProject.technologies.split(",").map((tech, index) => (
-                  <span key={index}>{tech.trim()}</span>
-                ))}
-              </div>
-              <div className="buttons">
-                <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="visit">Ver Proyecto</a>
-                <button className="close" onClick={() => setSelectedProject(null)}>Cerrar</button>
-              </div>
-            </div>
-          </div>
-        )}
+  <div className="modal open">
+    <div className="modal-content">
+      <button className="close-btn" onClick={() => setSelectedProject(null)}>✖</button>
+      {selectedProject.image && <img src={selectedProject.image} alt={selectedProject.title} />}
+      <h3>{selectedProject.title}</h3>
+      <p>{selectedProject.details || "Sin detalles disponibles"}</p>
+      <div className="technologies">
+        {selectedProject.technologies.length > 0
+          ? selectedProject.technologies.map((tech, index) => <span key={index}>{tech}</span>)
+          : "No hay tecnologías registradas"}
+      </div>
+      <div className="buttons">
+        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="visit">Ver Proyecto</a>
+        <button className="close" onClick={() => setSelectedProject(null)}>Cerrar</button>
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </section>
   );

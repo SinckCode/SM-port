@@ -8,6 +8,7 @@ import Settings from "./Settings";
 import Proyects from "./AdminProjects";
 import Loader from "../components/Loader";
 import "../styles/admin/admin-panel.scss";
+import AdminCarousel from "./AdminCarousel";
 
 const AdminPanel = () => {
   const [authToken, setAuthToken] = useState(null);
@@ -38,6 +39,7 @@ const AdminPanel = () => {
           <Route path="/messages" element={<Messages />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/proyects" element={<Proyects />} />
+          <Route path="/carousel" element={<AdminCarousel />} />
         </Routes>
       </div>
     </div>
