@@ -11,7 +11,7 @@
     h2 {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #00bcd4;
+      color: #E0E0E0;
       margin-bottom: 20px;
     }
 
@@ -48,7 +48,7 @@
       background: #252525;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(249, 212, 7, 0.5);
       transition: transform 0.3s ease-in-out;
 
       &:hover {
@@ -76,17 +76,22 @@
         }
 
         button {
-          background: #00bcd4;
-          color: white;
-          padding: 10px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: 0.3s;
+            background: black;
+            color: white;
+            border: 2px solid black;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px; // 🔥 Bordes redondeados
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
 
-          &:hover {
-            background: #008ba3;
-          }
+            &:hover {
+                background: #f9d407;
+                color: black;
+                border-color: #f9d407;
+                transform: scale(1.05);
+            }
         }
       }
     }
@@ -118,7 +123,7 @@
           max-width: 700px;
           text-align: center;
           position: relative;
-          box-shadow: 0px 4px 15px rgba(0, 188, 212, 0.3);
+          box-shadow: 0px 4px 15px rgba(249, 212, 7, 0.5);
 
           .close-btn {
             position: absolute;

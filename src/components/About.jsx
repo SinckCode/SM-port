@@ -7,7 +7,6 @@ const About = () => {
       <div className="container">
         <h2>Quiénes Somos</h2>
         <div className="about-content">
-          <img src="/images/team.jpg" alt="Nuestro Equipo" />
           <p>
             En Succeding Media, somos un equipo apasionado por la tecnología y el diseño digital.
             Nos especializamos en el desarrollo web y la creación de experiencias innovadoras

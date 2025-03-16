@@ -7,36 +7,51 @@
     padding: 15px 0;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease-in-out;
+    z-index: 1000;
 
     .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos */
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00bcd4;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: left;
+        flex: 1; /* Ocupa espacio a la izquierda */
+    }
+
+    .logos {
+        height: 50px; /* Ajusta el tamaño del logo */
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* Centra el logo */
     }
 
     ul {
-      display: flex;
-      gap: 20px;
-
-      li {
+        display: flex;
+        gap: 20px;
         list-style: none;
+        margin: 0;
+        padding: 0;
+        flex: 1; /* Ocupa espacio a la derecha */
+        justify-content: flex-end;
 
-        a {
-          font-size: 16px;
-          color: white;
-          transition: 0.3s ease-in-out;
+        li {
+            a {
+                font-size: 16px;
+                color: white;
+                transition: 0.3s ease-in-out;
 
-          &:hover {
-            color: #00bcd4;
-            text-decoration: underline;
-          }
+                &:hover {
+                    color: #ffffff;
+                    text-decoration: underline;
+                }
+            }
         }
-      }
     }
-  }
+}

@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import Users from "./Users";
 import Messages from "./Messages";
 import Settings from "./Settings";
+import Proyects from "./AdminProjects";
 import Loader from "../components/Loader";
 import "../styles/admin/admin-panel.scss";
 
@@ -36,6 +37,7 @@ const AdminPanel = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/proyects" element={<Proyects />} />
         </Routes>
       </div>
     </div>

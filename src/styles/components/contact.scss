@@ -11,7 +11,7 @@
     h2 {
       font-size: 2.5rem;
       font-weight: bold;
-      color: #00bcd4;
+      color: #E0E0E0;
       margin-bottom: 20px;
     }
 
@@ -49,19 +49,23 @@
       }
 
       .contact-button {
+        background: #f9d407;
+        color: black;
+        border: 2px solid #f9d407;
         padding: 12px 24px;
-        font-size: 1.2rem;
+        font-size: 18px;
         font-weight: bold;
-        background: #00bcd4;
-        color: white;
-        border: none;
         border-radius: 5px;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
+        box-shadow: 0 4px 15px rgba(249, 212, 7, 0.5);
 
         &:hover {
-          background: #008ba3;
-          transform: scale(1.05);
+            background: white;
+            color: #f9d407;
+            border-color: white;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
         }
       }
     }
