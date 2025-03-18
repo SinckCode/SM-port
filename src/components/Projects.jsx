@@ -29,7 +29,7 @@ const Projects = () => {
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project._id}>
-              <img src={project.image} alt={project.title} />
+              <img src={project.images ? project.images[0] : project.image} alt={project.title} />
               <div className="project-info">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
@@ -41,25 +41,42 @@ const Projects = () => {
 
         {/* Modal de Proyecto */}
         {selectedProject && (
-  <div className="modal open">
-    <div className="modal-content">
-      <button className="close-btn" onClick={() => setSelectedProject(null)}>✖</button>
-      {selectedProject.image && <img src={selectedProject.image} alt={selectedProject.title} />}
-      <h3>{selectedProject.title}</h3>
-      <p>{selectedProject.details || "Sin detalles disponibles"}</p>
-      <div className="technologies">
-        {selectedProject.technologies.length > 0
-          ? selectedProject.technologies.map((tech, index) => <span key={index}>{tech}</span>)
-          : "No hay tecnologías registradas"}
-      </div>
-      <div className="buttons">
-        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="visit">Ver Proyecto</a>
-        <button className="close" onClick={() => setSelectedProject(null)}>Cerrar</button>
-      </div>
-    </div>
-  </div>
-)}
+          <div className="modal open">
+            <div className="modal-content">
+              <button className="close-btn" onClick={() => setSelectedProject(null)}>✖</button>
 
+              {/* 📌 Galería de imágenes con CSS Grid */}
+              {selectedProject.images && selectedProject.images.length > 0 ? (
+                <div className="project-images">
+                  {selectedProject.images.map((img, index) => (
+                    <img key={index} src={img} alt={`${selectedProject.title} ${index + 1}`} />
+                  ))}
+                </div>
+              ) : (
+                <img src={selectedProject.image} alt={selectedProject.title} />
+              )}
+
+              <h3>{selectedProject.title}</h3>
+              <p>{selectedProject.details || "Sin detalles disponibles"}</p>
+
+              <div className="technologies">
+                {selectedProject.technologies && selectedProject.technologies.length > 0
+                  ? selectedProject.technologies.map((tech, index) => <span key={index}>{tech}</span>)
+                  : "No hay tecnologías registradas"}
+              </div>
+
+              {/* 📌 Switch corregido para mostrar el botón */}
+              {selectedProject.showButton && (
+                <div className="buttons">
+                  <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="visit">
+                    Ver Proyecto
+                  </a>
+                  <button className="close" onClick={() => setSelectedProject(null)}>Cerrar</button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
